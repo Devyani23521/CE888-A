@@ -1,22 +1,22 @@
-# CE888 A
-CODE RUN: The ipynb file at first needs to be uploaded in Google colab or jupyter notebook along with the dataset.
-Once it is uploaded there is one menu bar named runtime in the google colab and in there click on Run All if someone wants to run the whole ipynb file at oce
-
-Brighton Dataset:
-The dataset at first is read using the pandas dataframe. The dataset contains lots of missing values and imputation techniques is used in order to fill the missing column as it is essential before building any model and doing prediction. Missing values in these columns 'temp', 'dew', 'humidity', 'windspeed', 'winddir','sealevelpressure', 'cloudcover', 'solarradiation','solarenergy', 'uvindex' are filled with their mean values. Some other columns like 'precip', 'snowdepth', 'precipprob', 'preciptype','snow' where missing value is present is filled with 0. Data and time column is converted into proper format and then some of the data visualization is done with the help of matplotlib and seaborn libraries.After that splitting of data is done and features importance is selected
-
-Colchester Dataset:
-Once the dataset is imported it is seen that there are many missing values in the data.. So median imputation is used in order to fill the missing in all columns except preciptype column which contains more than 90% missing value and so it is dropped. Then some of the preprocessing and EDA is done on this dataset.
-
-#### My main goal for the next assignment is to build some deep learning and time series analysis model and comapre the performance and determine which model is preforming better by taking evaluation metrics like MSE,MAPE and RMSE. The model which will have lower value means the performance is better. Finally future forecasting for next couple of days will be done for columns like humidity and temperature
+## HOW TO RUN THE CODE:
+The colchester folder whether it is present in the desktop or google drive the link of the folder needs to be given properly and run all option needs to be selectyed. It contains two folder one is for exploratory data analysis and other is for  model building.
 
 
-#### ASSUMPTIONS FOR COLCHESTER DATASET
-Many inferences may be drawn from the dataset provided:
-(a)Uniform Sampling Interval: Assuming a constant temporal frequency, the data seems to be sampled at regular intervals (such as hourly).
-(b)Data quality: The dataset could include missing values (NaN) in some columns; preparation will be necessary to deal with these items.
-(c)Seasonal Patterns: The data may show seasonal trends and patterns that correspond to year-round fluctuations in the weather.
-(d)Possible Outliers: Extreme values or outliers may occur in some variables, indicating odd weather conditions or inaccurate measurements.
+## PROJECT DESCRIPTION:
+The goal of this project is to build a system that can forecast the availability of excess renewable energy 24 hours in advance for a data scientist working for an energy company. This effort was prompted by the necessity to provide free energy to local customers during periods of excess energy, such as solar or wind power, especially in light of the present growing energy costs. In order to assess the efficacy of the plan, the initiative intends to conduct a pilot test in May 2024, initially with a subset of clients.
+To ascertain whether it is feasible to forecast energy surpluses with any degree of accuracy, the project entails evaluating historical meteorological and energy production data from 2000 to the present. For the business to avoid the hefty expenses linked with false positives—the offering of free energy without any real surplus—this predictive technology is essential. The project's success depends on comprehensive data exploration, strong modeling to guarantee precise forecasts, and careful evaluation of operational and external factors influencing the production and consumption of energy.
 
-#### ASSUMPTIONS FOR BRIGHTON DATASET
-It is possible to assume that the observations in this time series data are evenly spaced in time. In other words, each data point—which is a timestamp—occurs at regular intervals, such hourly or daily. The data is also presumed to be stable, which means that its statistical characteristics, such as mean and variance, do not vary over time. Furthermore, the completeness of the data might be presumed.
+## ASSUMPTIONS:
+Uniformity in Past Information: We make the assumption that the company's historical data on energy generation from solar and wind sources is reliable, consistent, and indicative of production capacities both now and in the future. It is assumed that there are no substantial reporting gaps or inaccuracies in this data that could cause the forecasting model to be misled (Rodríguez,2020)
+Weather Predictability: Using current meteorological data and models, it is expected that weather conditions, which have a substantial impact on the generation of solar and wind energy, can be properly projected 24 hours in advance. This includes presumptions regarding the accuracy of solar intensity, wind speed, and duration forecasts (Rodríguez,2020).
+Stability of Renewable Technology: For the duration of the forecast and implementation period, we assume that the output and efficiency of the current renewable energy technologies, such as wind turbines and solar panels, will remain unchanged. There won't be any major advancements or regressions in technology that could have an impact on output levels (Devisingh,2018).
+ASSUMPTIONS OF ENERGY CONSUMPTION:
+Uniformity in Past Information: We make the assumption that the company's historical data on energy generation from solar and wind sources is reliable, consistent, and indicative of production capacities both now and in the future. It is assumed that there are no substantial reporting gaps or inaccuracies in this data that could cause the forecasting model to be misled (Rodríguez,2020)
+Weather Predictability: Using current meteorological data and models, it is expected that weather conditions, which have a substantial impact on the generation of solar and wind energy, can be properly projected 24 hours in advance. This includes presumptions regarding the accuracy of solar intensity, wind speed, and duration forecasts (Rodríguez,2020).
+Stability of Renewable Technology: For the duration of the forecast and implementation period, we assume that the output and efficiency of the current renewable energy technologies, such as wind turbines and solar panels, will remain unchanged. There won't be any major advancements or regressions in technology that could have an impact on output levels (Devisingh,2018).
+GENERAL ASSUMPTIONS:
+Geographic Consistency: Within the catchment area, assumptions are made regarding the consistency of the weather and consumption patterns. It is presumed that the study locations don't show significant variations in the weather or consumer behavior that would compromise the precision of local energy forecasts.
+Grid Integration and Storage: It is considered that excess energy can be distributed effectively and losslessly inside the grid architecture. Moreover, it is anticipated that all energy storage devices, including batteries and hydroelectric storage, will function flawlessly and without any malfunctions.
+
+
+
